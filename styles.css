@@ -307,15 +307,40 @@ h2 { margin-top: 42px; }
 
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(18px) scale(0.98);
   filter: blur(4px);
   transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
 }
 
 .reveal.reveal-in {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   filter: blur(0);
+}
+
+.tick-update {
+  animation: price-flicker 0.3s ease-in-out;
+}
+
+@keyframes price-flicker {
+  0% { box-shadow: 0 0 0 rgba(124,255,230,0); }
+  50% { box-shadow: 0 0 16px rgba(124,255,230,0.18); }
+  100% { box-shadow: 0 0 0 rgba(124,255,230,0); }
+}
+
+.market-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.02) 50%, transparent 100%);
+  opacity: 0.2;
+  pointer-events: none;
+  animation: shimmer 10s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-40%); }
+  100% { transform: translateX(40%); }
 }
 
 /* Subtle terminal flicker on card hover */

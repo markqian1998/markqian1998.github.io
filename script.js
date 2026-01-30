@@ -45,15 +45,20 @@ const revealObserver = new IntersectionObserver((entries) => {
 reveal.forEach((el) => revealObserver.observe(el));
 
 // === TradingView market widgets ===
-// Symbol lists live here — update labels/proName if a symbol shows N/A.
-// For DXY fallback, change the first candidate below.
+// Final symbols + sources (TradingView / FRED / proxy ETFs)
+// Equities: SPXUSD (CFD), NSXUSD (CFD), URTH (ETF proxy), NKY (index), HSI (index),
+// HSTech proxy (HKEX:3033), Shanghai (SSE:000001), CSI proxy (SSE:000300)
+// Rates/Credit: FRED DGS2/5/10/30, AGG (proxy), LQD (proxy), HYG (proxy)
+// FX: OANDA spot pairs (USDJPY, USDCHF, USDCNH, USDCNY, USDHKD, EURUSD, GBPUSD, AUDUSD)
+// Commodities/Crypto: BTCUSD (Coinbase), XAUUSD/XAGUSD (OANDA), COPPER (TVC proxy),
+// WTI/Brent/NG (TVC proxies to avoid N/A)
 const MARKET_SETS = {
   equities: [
     { label: 'S&P 500', proName: 'FOREXCOM:SPXUSD' },
     { label: 'Nasdaq 100', proName: 'FOREXCOM:NSXUSD' },
     { label: 'MSCI World (URTH)', proName: 'NYSEARCA:URTH' },
     { label: 'Nikkei 225', proName: 'INDEX:NKY' },
-    { label: 'HSI', proName: 'INDEX:HSI' },
+    { label: 'Hang Seng', proName: 'INDEX:HSI' },
     { label: 'HSTech (proxy)', proName: 'HKEX:3033' },
     { label: 'Shanghai Comp', proName: 'SSE:000001' },
     { label: 'CSI 300 (proxy)', proName: 'SSE:000300' }
@@ -68,33 +73,27 @@ const MARKET_SETS = {
     { label: 'HY credit (HYG)', proName: 'NYSEARCA:HYG' }
   ],
   fx_dollar: [
-    { label: 'DXY', proNameCandidates: ['ICEUS:DXY', 'TVC:DXY', 'FRED:DTWEXBGS'] },
-    { label: 'USDJPY', proName: 'FX:USDJPY' },
-    { label: 'USDCHF', proName: 'FX:USDCHF' },
-    { label: 'USDCNH', proName: 'FX:USDCNH' },
-    { label: 'USDHKD', proName: 'FX:USDHKD' },
-    { label: 'EURUSD', proName: 'FX:EURUSD' },
-    { label: 'GBPUSD', proName: 'FX:GBPUSD' },
-    { label: 'AUDUSD', proName: 'FX:AUDUSD' }
+    { label: 'USDJPY', proName: 'OANDA:USDJPY' },
+    { label: 'USDCHF', proName: 'OANDA:USDCHF' },
+    { label: 'USDCNH', proName: 'OANDA:USDCNH' },
+    { label: 'USDCNY', proName: 'OANDA:USDCNY' },
+    { label: 'USDHKD', proName: 'OANDA:USDHKD' },
+    { label: 'EURUSD', proName: 'OANDA:EURUSD' },
+    { label: 'GBPUSD', proName: 'OANDA:GBPUSD' },
+    { label: 'AUDUSD', proName: 'OANDA:AUDUSD' }
   ],
   commodities: [
     { label: 'BTC', proName: 'COINBASE:BTCUSD' },
     { label: 'Gold', proName: 'OANDA:XAUUSD' },
     { label: 'Silver', proName: 'OANDA:XAGUSD' },
-    { label: 'Copper (proxy HG)', proName: 'COMEX:HG1!' },
-    { label: 'WTI', proName: 'NYMEX:CL1!' },
-    { label: 'Brent', proName: 'ICEEUR:BRN1!' },
-    { label: 'Nat Gas', proName: 'NYMEX:NG1!' }
+    { label: 'Copper (proxy)', proName: 'TVC:COPPER' },
+    { label: 'WTI (proxy)', proName: 'TVC:USOIL' },
+    { label: 'Brent (proxy)', proName: 'TVC:UKOIL' },
+    { label: 'Nat Gas (proxy)', proName: 'TVC:NGAS' }
   ]
 };
 
-const resolveSymbol = (item) => {
-  if (item.proNameCandidates?.length) return item.proNameCandidates[0];
-  return item.proName;
-};
-
-const buildSymbols = (set) =>
-  set.map((item) => [item.label, resolveSymbol(item)]);
+const buildSymbols = (set) => set.map((item) => [item.label, item.proName]);
 
 const marketConfigs = {
   equities: {
@@ -145,3 +144,11 @@ const loadMarketWidget = (cfg) => {
 };
 
 Object.values(marketConfigs).forEach(loadMarketWidget);
+
+// Subtle flicker/glow pulse on cards to mimic terminal updates
+setInterval(() => {
+  document.querySelectorAll('.market-card').forEach((card) => {
+    card.classList.add('tick-update');
+    setTimeout(() => card.classList.remove('tick-update'), 300);
+  });
+}, 6000);
