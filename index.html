@@ -10,12 +10,16 @@
   <header class="site-header">
     <div class="brand">Mark Qian</div>
     <nav>
-      <a class="active" href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
-      <a href="projects.html">Projects</a>
-      <a href="education.html">Education</a>
-      <a href="contact.html">Contact</a>
+      <a class="active" href="index.html" data-i18n="nav.home">Home</a>
+      <a href="experience.html" data-i18n="nav.experience">Experience</a>
+      <a href="projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="education.html" data-i18n="nav.education">Education</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="en">ENG</button>
+      <button class="lang-btn" data-lang="zh">中文</button>
+    </div>
   </header>
 
   <section class="ticker">
@@ -61,26 +65,26 @@
       <div class="profile">
         <img class="avatar" src="assets/mark-qian.jpg" alt="Mark Qian" />
         <div>
-          <h1>Associate Portfolio Manager — Multi‑Asset, Macro, Derivatives <img class="title-logo" src="assets/logos/poseidon.png" alt="Poseidon Capital" /></h1>
-          <p class="lead">
+          <h1 data-i18n="hero.title">Associate Portfolio Manager — Multi‑Asset, Macro, Derivatives <img class="title-logo" src="assets/logos/poseidon.png" alt="Poseidon Capital" /></h1>
+          <p class="lead" data-i18n="hero.lead">
             Building alpha through disciplined risk management, cross‑asset structuring, and
             discretionary macro execution. Based in Hong Kong.
           </p>
           <div class="meta">
-            <span><strong>Name:</strong> Mark Qian</span>
-            <span><strong>Age:</strong> 28</span>
-            <span><strong>Location:</strong> Hong Kong</span>
-            <span><strong>Hometown:</strong> Shanghai</span>
+            <span><strong data-i18n="meta.name">Name:</strong> <span data-i18n="meta.name.value">Mark Qian</span></span>
+            <span><strong data-i18n="meta.age">Age:</strong> <span data-i18n="meta.age.value">28</span></span>
+            <span><strong data-i18n="meta.location">Location:</strong> <span data-i18n="meta.location.value">Hong Kong</span></span>
+            <span><strong data-i18n="meta.hometown">Hometown:</strong> <span data-i18n="meta.hometown.value">Shanghai</span></span>
           </div>
           <div class="cta-edu">
             <div class="cta-row">
-              <a class="btn" href="experience.html">View Experience</a>
-              <a class="btn ghost" href="projects.html">See Projects</a>
-              <a class="btn ghost" href="assets/Mark-Qian-Resume.pdf" download>Download Resume (PDF)</a>
+              <a class="btn" href="experience.html" data-i18n="cta.experience">View Experience</a>
+              <a class="btn ghost" href="projects.html" data-i18n="cta.projects">See Projects</a>
+              <a class="btn ghost" href="assets/Mark-Qian-Resume.pdf" download data-i18n="cta.resume">Download Resume (PDF)</a>
             </div>
             <div class="edu-inline">
-              <span><img class="edu-logo" src="assets/logos/umich.png" alt="UMich" />University of Michigan (BS Math) · 2018–2022</span>
-              <span><img class="edu-logo" src="assets/logos/fudan-hs.png" alt="Fudan HS" />High School Affiliated to Fudan University · 2014–2017</span>
+              <span><img class="edu-logo" src="assets/logos/umich.png" alt="UMich" /><span data-i18n="edu.umich">University of Michigan (BS Math) · 2018–2022</span></span>
+              <span><img class="edu-logo" src="assets/logos/fudan-hs.png" alt="Fudan HS" /><span data-i18n="edu.fudan">High School Affiliated to Fudan University · 2014–2017</span></span>
             </div>
           </div>
           <div class="links">
@@ -99,36 +103,36 @@
           </div>
 
           <div class="mini-section">
-            <h3>Licenses & Certifications</h3>
+            <h3 data-i18n="certs.title">Licenses & Certifications</h3>
             <div class="cert-grid">
               <div class="cert-card">
                 <img class="logo" src="assets/logos/sfc.png" alt="SFC" />
                 <div>
-                  <h3>SFC Type 4</h3>
+                  <h3 data-i18n="certs.sfc4">SFC Type 4</h3>
                 </div>
               </div>
               <div class="cert-card">
                 <img class="logo" src="assets/logos/sfc.png" alt="SFC" />
                 <div>
-                  <h3>SFC Type 9</h3>
+                  <h3 data-i18n="certs.sfc9">SFC Type 9</h3>
                 </div>
               </div>
               <div class="cert-card">
                 <img class="logo" src="assets/logos/bloomberg.png" alt="Bloomberg" />
                 <div>
-                  <h3>Bloomberg Market Concepts</h3>
+                  <h3 data-i18n="certs.bmc">Bloomberg Market Concepts</h3>
                 </div>
               </div>
               <div class="cert-card">
                 <img class="logo" src="assets/logos/jpm.png" alt="J.P. Morgan" />
                 <div>
-                  <h3>J.P. Morgan VEP</h3>
+                  <h3 data-i18n="certs.jpm">J.P. Morgan VEP</h3>
                 </div>
               </div>
               <div class="cert-card">
                 <img class="logo" src="assets/logos/citi.png" alt="Citi" />
                 <div>
-                  <h3>Citi VEP</h3>
+                  <h3 data-i18n="certs.citi">Citi VEP</h3>
                 </div>
               </div>
             </div>
@@ -137,64 +141,64 @@
       </div>
 
       <div class="stats">
-        <div class="stats-title">Professional Experience</div>
+        <div class="stats-title" data-i18n="stats.title">Professional Experience</div>
         <div class="stat">
           <span class="stat-value" data-count="520">0</span>
-          <span class="stat-label">$M AUM</span>
+          <span class="stat-label" data-i18n="stats.aum">$M AUM</span>
         </div>
         <div class="stat">
           <span class="stat-value" data-count="10.17">0</span>
-          <span class="stat-label">% p.a. return</span>
+          <span class="stat-label" data-i18n="stats.return">% p.a. return</span>
         </div>
         <div class="stat">
           <span class="stat-value" data-count="12">0</span>
-          <span class="stat-label">% Vol cap</span>
+          <span class="stat-label" data-i18n="stats.vol">% Vol cap</span>
         </div>
       </div>
     </section>
 
     <section class="grid">
       <article class="card">
-        <h3>Portfolio Management</h3>
+        <h3 data-i18n="cards.pm.title">Portfolio Management</h3>
         <p>
-          Led a 5‑person team managing $520M AUM across FICC, Equities, and Derivatives
-          with volatility below 12% since Jun 2022.
+          <span data-i18n="cards.pm.body">Led a 5‑person team managing $520M AUM across FICC, Equities, and Derivatives
+          with volatility below 12% since Jun 2022.</span>
         </p>
       </article>
       <article class="card">
-        <h3>Infrastructure Building &amp; Risk Management</h3>
+        <h3 data-i18n="cards.rm.title">Infrastructure Building &amp; Risk Management</h3>
         <p>
-          Built pricing and risk engines using Python/QuantLib, SABR/SVI vols, GARCH/CVaR,
-          copulas, PCA, and Black‑Litterman stabilization.
+          <span data-i18n="cards.rm.body">Built pricing and risk engines using Python/QuantLib, SABR/SVI vols, GARCH/CVaR,
+          copulas, PCA, and Black‑Litterman stabilization.</span>
         </p>
       </article>
       <article class="card">
-        <h3>Client Engagement &amp; Communication</h3>
+        <h3 data-i18n="cards.ce.title">Client Engagement &amp; Communication</h3>
         <p>
-          Prepared market wraps, ran monthly portfolio reviews, and delivered tactical
-          positioning updates for UHNW and corporate clients.
+          <span data-i18n="cards.ce.body">Prepared market wraps, ran monthly portfolio reviews, and delivered tactical
+          positioning updates for UHNW and corporate clients.</span>
         </p>
       </article>
     </section>
 
     <section class="section">
-      <h2>Highlights</h2>
+      <h2 data-i18n="highlights.title">Highlights</h2>
       <ul class="bullets">
-        <li>Primary PM of $35M UBS IB Bond AMC; +253 bps vs BBG Barclays IG Index since inception.</li>
-        <li>Executed $12M 15‑name US equity short‑put strategy with valuation screens and IV/RV calibration.</li>
-        <li>Structured $30M cross‑currency loan optimization strategy across CHF/JPY/CNH.</li>
+        <li><span data-i18n="highlights.1">Primary PM of $35M UBS IB Bond AMC; +253 bps vs BBG Barclays IG Index since inception.</span></li>
+        <li><span data-i18n="highlights.2">Executed $12M 15‑name US equity short‑put strategy with valuation screens and IV/RV calibration.</span></li>
+        <li><span data-i18n="highlights.3">Structured $30M cross‑currency loan optimization strategy across CHF/JPY/CNH.</span></li>
       </ul>
     </section>
 
     <section class="section markets">
       <div class="market-header">
-        <h2>Live Markets</h2>
-        <span class="disclaimer">Delayed data · TradingView</span>
+        <h2 data-i18n="markets.title">Live Markets</h2>
+        <span class="disclaimer" data-i18n="markets.disclaimer">Delayed data · TradingView</span>
       </div>
       <div class="market-grid">
         <div class="market-card" data-market="equities">
           <div class="market-card-header">
-            <h3>Equities</h3>
+            <h3 data-i18n="markets.equities">Equities</h3>
             <span class="live-dot" aria-hidden="true"></span>
           </div>
           <div class="market-widget" id="market-equities"></div>
@@ -202,7 +206,7 @@
 
         <div class="market-card" data-market="rates">
           <div class="market-card-header">
-            <h3>Rates & Credit</h3>
+            <h3 data-i18n="markets.rates">Rates & Credit</h3>
             <span class="live-dot" aria-hidden="true"></span>
           </div>
           <div class="market-widget" id="market-rates"></div>
@@ -210,7 +214,7 @@
 
         <div class="market-card" data-market="fx">
           <div class="market-card-header">
-            <h3>FX & Dollar</h3>
+            <h3 data-i18n="markets.fx">FX & Dollar</h3>
             <span class="live-dot" aria-hidden="true"></span>
           </div>
           <div class="market-widget" id="market-fx"></div>
@@ -218,7 +222,7 @@
 
         <div class="market-card" data-market="commodities">
           <div class="market-card-header">
-            <h3>Commodities & Crypto</h3>
+            <h3 data-i18n="markets.commodities">Commodities & Crypto</h3>
             <span class="live-dot" aria-hidden="true"></span>
           </div>
           <div class="market-widget" id="market-commodities"></div>
@@ -229,7 +233,7 @@
 
   <footer class="site-footer">
     <span>© 2026 Mark Qian</span>
-    <a href="contact.html">LinkedIn</a>
+    <a href="contact.html" data-i18n="footer.linkedin">LinkedIn</a>
   </footer>
   <script src="script.js"></script>
 </body>

@@ -21,7 +21,7 @@ body {
 
 .site-header {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 18px;
   padding: 24px 8vw;
@@ -31,6 +31,29 @@ body {
   background: rgba(10, 13, 18, 0.8);
   backdrop-filter: blur(14px);
   z-index: 10;
+}
+
+.lang-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-btn {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid #2a3648;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  color: var(--accent);
+  border-color: #3b4d66;
+  box-shadow: 0 0 10px rgba(124, 255, 230, 0.18);
 }
 
 .brand {
