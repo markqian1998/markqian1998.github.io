@@ -49,14 +49,14 @@ reveal.forEach((el) => revealObserver.observe(el));
 const marketConfigs = {
   equities: {
     containerId: 'market-equities',
-    // TradingView symbol list for Equities
+    // TradingView symbol list for Equities (CFD/ETF proxies for reliable quotes)
     symbols: [
       ['S&P 500', 'FOREXCOM:SPXUSD'],
       ['Nasdaq 100', 'FOREXCOM:NSXUSD'],
       ['MSCI World (URTH)', 'AMEX:URTH'],
       ['Nikkei 225', 'TVC:NI225'],
-      ['Hang Seng', 'HKEX:HSI'],
-      ['Hang Seng Tech', 'HKEX:HSTECH'],
+      ['Hang Seng', 'FOREXCOM:HK33'], // fallback proxy for HSI
+      ['Hang Seng Tech', 'HKEX:HSTECH'], // if N/A, replace with a proxy
       ['Shanghai Composite', 'SSE:000001']
     ]
   },
@@ -84,22 +84,20 @@ const marketConfigs = {
       ['USDHKD', 'OANDA:USDHKD'],
       ['EURUSD', 'OANDA:EURUSD'],
       ['GBPUSD', 'OANDA:GBPUSD'],
-      ['AUDUSD', 'OANDA:AUDUSD'],
-      // Optional if available on TradingView
-      ['USDCNY', 'OANDA:USDCNY']
+      ['AUDUSD', 'OANDA:AUDUSD']
     ]
   },
   commodities: {
     containerId: 'market-commodities',
-    // TradingView symbol list for Commodities & Crypto
+    // TradingView symbol list for Commodities & Crypto (spot/CFD proxies)
     symbols: [
       ['Bitcoin', 'COINBASE:BTCUSD'],
       ['Gold', 'OANDA:XAUUSD'],
       ['Silver', 'OANDA:XAGUSD'],
-      ['Copper', 'COMEX:HG1!'],
+      ['Copper', 'TVC:COPPER'], // proxy for copper spot
       ['WTI', 'TVC:USOIL'],
       ['Brent', 'TVC:UKOIL'],
-      ['Natural Gas', 'NYMEX:NG1!']
+      ['Natural Gas', 'TVC:NGAS'] // proxy for Henry Hub
     ]
   }
 };
