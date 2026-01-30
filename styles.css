@@ -254,13 +254,13 @@ h2 { margin-top: 42px; }
 }
 
 .stats-title {
-  font-size: 18px;
-  letter-spacing: 0.08em;
+  font-size: 36px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent);
   font-weight: 700;
-  text-shadow: 0 0 12px rgba(124, 255, 230, 0.25);
-  margin-right: 10px;
+  text-shadow: 0 0 14px rgba(124, 255, 230, 0.28);
+  margin-right: 14px;
 }
 
 .stats .stat {
