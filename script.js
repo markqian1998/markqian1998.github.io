@@ -154,8 +154,7 @@ const I18N = {
     'nav.contact': 'Contact',
     'footer.linkedin': 'LinkedIn',
     'hero.title': 'Associate Portfolio Manager — Multi‑Asset, Macro, Derivatives',
-    'hero.lead': 'Building alpha through disciplined risk management, cross‑asset structuring, and
-            discretionary macro execution. Based in Hong Kong.',
+    'hero.lead': 'Building alpha through disciplined risk management, cross‑asset structuring, and discretionary macro execution. Based in Hong Kong.',
     'meta.name': 'Name:',
     'meta.name.value': 'Mark Qian',
     'meta.age': 'Age:',
@@ -182,14 +181,11 @@ const I18N = {
     'stats.return': '% p.a. return',
     'stats.vol': '% Vol cap',
     'cards.pm.title': 'Portfolio Management',
-    'cards.pm.body': 'Led a 5‑person team managing $520M AUM across FICC, Equities, and Derivatives
-          with volatility below 12% since Jun 2022.',
+    'cards.pm.body': 'Led a 5‑person team managing $520M AUM across FICC, Equities, and Derivatives with volatility below 12% since Jun 2022.',
     'cards.rm.title': 'Infrastructure Building & Risk Management',
-    'cards.rm.body': 'Built pricing and risk engines using Python/QuantLib, SABR/SVI vols, GARCH/CVaR,
-          copulas, PCA, and Black‑Litterman stabilization.',
+    'cards.rm.body': 'Built pricing and risk engines using Python/QuantLib, SABR/SVI vols, GARCH/CVaR, copulas, PCA, and Black‑Litterman stabilization.',
     'cards.ce.title': 'Client Engagement & Communication',
-    'cards.ce.body': 'Prepared market wraps, ran monthly portfolio reviews, and delivered tactical
-          positioning updates for UHNW and corporate clients.',
+    'cards.ce.body': 'Prepared market wraps, ran monthly portfolio reviews, and delivered tactical positioning updates for UHNW and corporate clients.',
     'highlights.title': 'Highlights',
     'highlights.1': 'Primary PM of $35M UBS IB Bond AMC; +253 bps vs BBG Barclays IG Index since inception.',
     'highlights.2': 'Executed $12M 15‑name US equity short‑put strategy with valuation screens and IV/RV calibration.',
