@@ -318,6 +318,16 @@ h2 { margin-top: 42px; }
   filter: blur(0);
 }
 
+/* Subtle terminal flicker on card hover */
+.market-card:hover {
+  animation: terminal-flicker 0.35s ease-in-out;
+}
+
+@keyframes terminal-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.92; }
+}
+
 .section { margin-top: 42px; }
 
 .bullets { padding-left: 18px; color: var(--muted); }

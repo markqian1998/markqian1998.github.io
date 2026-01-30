@@ -29,7 +29,7 @@ const countObserver = new IntersectionObserver((entries) => {
 
 counters.forEach((el) => countObserver.observe(el));
 
-// === Reveal animations ===
+// === Reveal animations (cards, sections, markets) ===
 const reveal = document.querySelectorAll('.card, .section, .hero, .market-card');
 reveal.forEach((el) => el.classList.add('reveal'));
 
@@ -40,65 +40,78 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.2 });
+}, { threshold: 0.18 });
 
 reveal.forEach((el) => revealObserver.observe(el));
 
 // === TradingView market widgets ===
-// Symbol lists live here — update symbols per card as needed.
+// Symbol lists live here — update labels/proName if a symbol shows N/A.
+// For DXY fallback, change the first candidate below.
+const MARKET_SETS = {
+  equities: [
+    { label: 'S&P 500', proName: 'FOREXCOM:SPXUSD' },
+    { label: 'Nasdaq 100', proName: 'FOREXCOM:NSXUSD' },
+    { label: 'MSCI World (URTH)', proName: 'NYSEARCA:URTH' },
+    { label: 'Nikkei 225', proName: 'INDEX:NKY' },
+    { label: 'HSI', proName: 'INDEX:HSI' },
+    { label: 'HSTech (proxy)', proName: 'HKEX:3033' },
+    { label: 'Shanghai Comp', proName: 'SSE:000001' },
+    { label: 'CSI 300 (proxy)', proName: 'SSE:000300' }
+  ],
+  rates_credit: [
+    { label: 'US 2Y', proName: 'FRED:DGS2' },
+    { label: 'US 5Y', proName: 'FRED:DGS5' },
+    { label: 'US 10Y', proName: 'FRED:DGS10' },
+    { label: 'US 30Y', proName: 'FRED:DGS30' },
+    { label: 'US Agg (AGG)', proName: 'NYSEARCA:AGG' },
+    { label: 'IG credit (LQD)', proName: 'NYSEARCA:LQD' },
+    { label: 'HY credit (HYG)', proName: 'NYSEARCA:HYG' }
+  ],
+  fx_dollar: [
+    { label: 'DXY', proNameCandidates: ['ICEUS:DXY', 'TVC:DXY', 'FRED:DTWEXBGS'] },
+    { label: 'USDJPY', proName: 'FX:USDJPY' },
+    { label: 'USDCHF', proName: 'FX:USDCHF' },
+    { label: 'USDCNH', proName: 'FX:USDCNH' },
+    { label: 'USDHKD', proName: 'FX:USDHKD' },
+    { label: 'EURUSD', proName: 'FX:EURUSD' },
+    { label: 'GBPUSD', proName: 'FX:GBPUSD' },
+    { label: 'AUDUSD', proName: 'FX:AUDUSD' }
+  ],
+  commodities: [
+    { label: 'BTC', proName: 'COINBASE:BTCUSD' },
+    { label: 'Gold', proName: 'OANDA:XAUUSD' },
+    { label: 'Silver', proName: 'OANDA:XAGUSD' },
+    { label: 'Copper (proxy HG)', proName: 'COMEX:HG1!' },
+    { label: 'WTI', proName: 'NYMEX:CL1!' },
+    { label: 'Brent', proName: 'ICEEUR:BRN1!' },
+    { label: 'Nat Gas', proName: 'NYMEX:NG1!' }
+  ]
+};
+
+const resolveSymbol = (item) => {
+  if (item.proNameCandidates?.length) return item.proNameCandidates[0];
+  return item.proName;
+};
+
+const buildSymbols = (set) =>
+  set.map((item) => [item.label, resolveSymbol(item)]);
+
 const marketConfigs = {
   equities: {
     containerId: 'market-equities',
-    // TradingView symbol list for Equities (CFD/ETF proxies for reliable quotes)
-    symbols: [
-      ['S&P 500', 'FOREXCOM:SPXUSD'],
-      ['Nasdaq 100', 'FOREXCOM:NSXUSD'],
-      ['MSCI World (URTH)', 'AMEX:URTH'],
-      ['Nikkei 225', 'TVC:NI225'],
-      ['Hang Seng', 'FOREXCOM:HK33'], // fallback proxy for HSI
-      ['Hang Seng Tech', 'HKEX:HSTECH'], // if N/A, replace with a proxy
-      ['Shanghai Composite', 'SSE:000001']
-    ]
+    symbols: buildSymbols(MARKET_SETS.equities)
   },
   rates: {
     containerId: 'market-rates',
-    // TradingView symbol list for Rates & Credit
-    symbols: [
-      ['UST 2Y', 'TVC:US02Y'],
-      ['UST 5Y', 'TVC:US05Y'],
-      ['UST 10Y', 'TVC:US10Y'],
-      ['UST 30Y', 'TVC:US30Y'],
-      ['US Agg (AGG)', 'AMEX:AGG'],
-      ['IG Credit (LQD)', 'AMEX:LQD'],
-      ['HY Credit (HYG)', 'AMEX:HYG']
-    ]
+    symbols: buildSymbols(MARKET_SETS.rates_credit)
   },
   fx: {
     containerId: 'market-fx',
-    // TradingView symbol list for FX & Dollar
-    symbols: [
-      ['DXY', 'TVC:DXY'],
-      ['USDJPY', 'OANDA:USDJPY'],
-      ['USDCHF', 'OANDA:USDCHF'],
-      ['USDCNH', 'OANDA:USDCNH'],
-      ['USDHKD', 'OANDA:USDHKD'],
-      ['EURUSD', 'OANDA:EURUSD'],
-      ['GBPUSD', 'OANDA:GBPUSD'],
-      ['AUDUSD', 'OANDA:AUDUSD']
-    ]
+    symbols: buildSymbols(MARKET_SETS.fx_dollar)
   },
   commodities: {
     containerId: 'market-commodities',
-    // TradingView symbol list for Commodities & Crypto (spot/CFD proxies)
-    symbols: [
-      ['Bitcoin', 'COINBASE:BTCUSD'],
-      ['Gold', 'OANDA:XAUUSD'],
-      ['Silver', 'OANDA:XAGUSD'],
-      ['Copper', 'TVC:COPPER'], // proxy for copper spot
-      ['WTI', 'TVC:USOIL'],
-      ['Brent', 'TVC:UKOIL'],
-      ['Natural Gas', 'TVC:NGAS'] // proxy for Henry Hub
-    ]
+    symbols: buildSymbols(MARKET_SETS.commodities)
   }
 };
 
