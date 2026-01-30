@@ -18,16 +18,6 @@ const animateCount = (el) => {
   requestAnimationFrame(tick);
 };
 
-const countObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      animateCount(entry.target);
-      countObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.6 });
-
-counters.forEach((el) => countObserver.observe(el));
 
 // === Reveal animations (cards, sections, markets) ===
 const reveal = document.querySelectorAll('.card, .section, .hero, .market-card');
