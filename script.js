@@ -367,6 +367,9 @@ const getLang = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   setLang(getLang());
+  // ensure stats show and animate
+  counters.forEach((el) => { el.textContent = el.dataset.count; });
+  setTimeout(() => { counters.forEach((el) => animateCount(el)); }, 50);
   document.querySelectorAll('[data-lang]').forEach((btn) => {
     btn.addEventListener('click', () => setLang(btn.dataset.lang));
   });
