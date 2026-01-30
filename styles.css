@@ -276,14 +276,14 @@ h2 { margin-top: 42px; }
 }
 
 .stat-value {
-  font-size: 22px;
+  font-size: 29px;
   font-weight: 700;
   color: var(--accent);
 }
 
 .stat-label {
   display: block;
-  font-size: 12px;
+  font-size: 16px;
   color: var(--muted);
   margin-top: 4px;
   letter-spacing: 0.04em;
