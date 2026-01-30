@@ -49,18 +49,20 @@ reveal.forEach((el) => revealObserver.observe(el));
 const marketConfigs = {
   equities: {
     containerId: 'market-equities',
+    // TradingView symbol list for Equities
     symbols: [
-      ['S&P 500', 'SP:SPX'],
-      ['Nasdaq 100', 'NASDAQ:NDX'],
-      ['MSCI World', 'TVC:ACWI'],
+      ['S&P 500', 'FOREXCOM:SPXUSD'],
+      ['Nasdaq 100', 'FOREXCOM:NSXUSD'],
+      ['MSCI World (URTH)', 'AMEX:URTH'],
       ['Nikkei 225', 'TVC:NI225'],
-      ['Hang Seng', 'HSI:HSI'],
+      ['Hang Seng', 'HKEX:HSI'],
       ['Hang Seng Tech', 'HKEX:HSTECH'],
       ['Shanghai Composite', 'SSE:000001']
     ]
   },
   rates: {
     containerId: 'market-rates',
+    // TradingView symbol list for Rates & Credit
     symbols: [
       ['UST 2Y', 'TVC:US02Y'],
       ['UST 5Y', 'TVC:US05Y'],
@@ -73,6 +75,7 @@ const marketConfigs = {
   },
   fx: {
     containerId: 'market-fx',
+    // TradingView symbol list for FX & Dollar
     symbols: [
       ['DXY', 'TVC:DXY'],
       ['USDJPY', 'OANDA:USDJPY'],
@@ -88,13 +91,14 @@ const marketConfigs = {
   },
   commodities: {
     containerId: 'market-commodities',
+    // TradingView symbol list for Commodities & Crypto
     symbols: [
       ['Bitcoin', 'COINBASE:BTCUSD'],
       ['Gold', 'OANDA:XAUUSD'],
       ['Silver', 'OANDA:XAGUSD'],
       ['Copper', 'COMEX:HG1!'],
-      ['WTI', 'NYMEX:CL1!'],
-      ['Brent', 'ICEEUR:BRN1!'],
+      ['WTI', 'TVC:USOIL'],
+      ['Brent', 'TVC:UKOIL'],
       ['Natural Gas', 'NYMEX:NG1!']
     ]
   }
