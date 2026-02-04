@@ -168,46 +168,58 @@ h2 { margin-top: 42px; }
 }
 
 .cta-edu {
-  margin-top: 24px;
+  margin-top: 18px;
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 16px;
-  align-items: center;
+  gap: 14px;
+  align-items: flex-start;
+  flex: 0 0 auto;
+}
+
+.cta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cta-edu .links {
+  margin: 0;
 }
 
 .cta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .edu-inline {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  font-size: 13px;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.2;
   color: #dff2ff;
   text-align: right;
   font-weight: 600;
   align-self: flex-end;
-  margin-top: 6px;
+  margin-top: 0;
 }
 
 .edu-inline span {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   justify-content: flex-end;
 }
 
 .edu-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
   object-fit: contain;
   background: rgba(255,255,255,0.12);
   border: 1px solid #2b3a52;
-  padding: 4px;
+  padding: 3px;
 }
 
 .btn {
@@ -231,19 +243,31 @@ h2 { margin-top: 42px; }
   box-shadow: none;
 }
 
+.cta-links-certs {
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+}
+
+.cta-links-certs .v-spacer {
+  flex: 1;
+}
+
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 16px;
+  gap: 18px;
+  margin: 0;
+  flex: 0 0 auto;
 }
 
 .mini-section {
-  margin-top: 22px;
+  margin-top: 0;
+  flex: 0 0 auto;
 }
 
 .mini-section h3 {
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
   font-size: 15px;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -253,16 +277,16 @@ h2 { margin-top: 42px; }
 .icon-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   color: var(--muted);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 18px;
   letter-spacing: 0.03em;
 }
 
 .icon-link svg {
-  width: 18px;
-  height: 18px;
+  width: 26px;
+  height: 26px;
   fill: currentColor;
 }
 
