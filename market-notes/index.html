@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Notes — Mark Qian</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">Mark Qian</div>
+    <nav>
+      <a href="../index.html" data-i18n="nav.home">Home</a>
+      <a href="../experience.html" data-i18n="nav.experience">Experience</a>
+      <a href="../projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="../education.html" data-i18n="nav.education">Education</a>
+      <a class="active" href="index.html" data-i18n="nav.marketNotes">Market Notes</a>
+      <a href="../contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="en">ENG</button>
+      <button class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="page notes-page">
+    <header class="notes-hero">
+      <h1>Market Notes</h1>
+      <p class="notes-subtitle">Short, high-signal market reads. 3–5 minute refreshers.</p>
+    </header>
+
+    <section class="notes-controls">
+      <div class="notes-filters" id="notes-filters"></div>
+    </section>
+
+    <section class="notes-list" id="notes-list" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Mark Qian</span>
+    <a href="../contact.html" data-i18n="footer.linkedin">LinkedIn</a>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script src="../assets/marked.min.js"></script>
+  <script src="../market-notes.js"></script>
+</body>
+</html>

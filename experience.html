@@ -14,6 +14,7 @@
       <a class="active" href="experience.html" data-i18n="nav.experience">Experience</a>
       <a href="projects.html" data-i18n="nav.projects">Projects</a>
       <a href="education.html" data-i18n="nav.education">Education</a>
+      <a href="market-notes/index.html" data-i18n="nav.marketNotes">Market Notes</a>
       <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="lang-toggle">
@@ -28,32 +29,113 @@
     <section class="timeline">
       <div class="role">
         <div class="role-header">
-          <h3><span data-i18n="exp.poseidon.title">Poseidon Capital Limited — Associate Portfolio Manager</span></h3>
-          <span><span data-i18n="exp.poseidon.time">Hong Kong · Nov 2021 – Present</span></span>
+          <h3 data-i18n="exp.poseidon.title">Poseidon Capital Limited — Associate Portfolio Manager (SFC Type 4 & Type 9)</h3>
+          <span data-i18n="exp.poseidon.time">Hong Kong | Nov 2021 – Present</span>
         </div>
+        <p class="lead" data-i18n="exp.poseidon.lead">Multi‑asset discretionary portfolio management for UHNW clients across FICC, equities, derivatives and structured solutions. Build alpha strategies and internal pricing/risk infrastructure.</p>
+
+        <h4 class="role-section" data-i18n="exp.poseidon.pm.title">Portfolio Management & Alpha Generation</h4>
         <ul class="bullets">
-          <li>Led 5‑person team managing $520M AUM across FICC, Equities, and Derivatives; 10.17% p.a. since Jun 2022 with vol &lt; 12%.</li>
-          <li><span data-i18n="exp.poseidon.b2">Primary PM of $35M in‑house Bond AMC at UBS IB across 30+ IG credits; macro overlays (short UST puts, CDX/iTraxx roll shorts, short gamma/long vega on swaption straddles) to enhance yield and hedge tail risk. Outperformed BBG Barclays IG Index by 253 bps since inception.</span></li>
-          <li><span data-i18n="exp.poseidon.b3">Built and executed $12M 15‑name US equity short‑put strategy with valuation screens (EV/EBITDA, EV/Sales, P/FCF) and proprietary IV/RV calibration; delta × IV risk‑weighted sizing with active Greek and skew‑aware monitoring.</span></li>
-          <li>Structured and managed $30M cross‑currency loan optimization for PB clients across CHF/JPY/CNH; generated $2.7M interest savings &amp; FX PnL. Advised 7 corporate clients on FX/rates hedging via forwards, multi‑leg options, and CCS.</li>
-          <li><span data-i18n="exp.poseidon.b5">Collaborated on $20M Equity L/S AMC with GS, combining Marquee basket exposure and single‑name ideas driven by fundamental analysis.</span></li>
-          <li><span data-i18n="exp.poseidon.b6">Developed antithetic Monte Carlo pricing engine with Python/QuantLib; integrated SVI/SABR vols and OIS curves for 200+ daily valuations and Greeks.</span></li>
-          <li><span data-i18n="exp.poseidon.b7">Designed internal risk engine using CVaR, GARCH, copulas, PCA, and Black‑Litterman signal stabilization; applied Bayesian shrinkage and Fisher‑information‑weighted covariance to reduce regime fragility.</span></li>
-          <li><span data-i18n="exp.poseidon.b8">Automated multi‑asset trade lifecycle (quote → order → book) via Python/Flask; integrated OMS/PMS (Enfusion/Derivitec/TSI/BBG).</span></li>
-          <li><span data-i18n="exp.poseidon.b9">Prepared market wraps and investor letters; ran monthly portfolio reviews and proactive rebalancing with daily client engagement.</span></li>
-          <li><span data-i18n="exp.poseidon.b10">Mentored 9 intern analysts; delivered 101 training sessions on products and markets.</span></li>
+          <li data-i18n="exp.poseidon.pm.1">Led a 5‑person team managing $520M AUM across multi‑asset mandates (FICC, equities, derivatives), delivering 10.17% p.a. since Jun 2022 with portfolio volatility maintained below 12%.</li>
+          <li data-i18n="exp.poseidon.pm.2">Primary PM of $35M in‑house Bond AMC (UBS IB) allocating across 30+ IG credits, deploying macro overlays to enhance yield and hedge tail risks, including short UST puts (tail hedge / duration control), CDX/iTraxx roll shorts (contango capture), and swaption straddle exposures (short gamma / long vega positioning). Outperformed BBG Barclays IG Index by 253 bps since inception.</li>
+          <li data-i18n="exp.poseidon.pm.3">Built and executed a $12M 15‑name US equity short‑put strategy, combining valuation screening (EV/EBITDA, EV/Sales, P/FCF) with proprietary Python IV/RV calibration to systematically harvest VRP via 1M rolling 20–30 delta puts; sized risk via delta × IV weighting with continuous Greek/skew monitoring.</li>
+          <li data-i18n="exp.poseidon.pm.4">Structured and managed a $30M cross‑currency loan optimization program for PB clients, reallocating exposures across CHF / JPY / CNH to capture hiking‑cycle rate differentials; generated $2.7M in interest savings and FX PnL.</li>
+          <li data-i18n="exp.poseidon.pm.5">Advised 7 corporate clients on FX/rates hedging using forwards, multi‑leg options, and cross‑currency swaps (CCS), providing execution‑ready structures under varying volatility and liquidity regimes.</li>
+          <li data-i18n="exp.poseidon.pm.6">Collaborated on a $20M Equity L/S AMC with GS, combining Marquee basket exposure and single‑name ideas; supported tactical timing and dynamic hedging using DownVaR and weekly gamma positioning.</li>
+        </ul>
+
+        <h4 class="role-section" data-i18n="exp.poseidon.risk.title">Infrastructure Building & Risk Management</h4>
+        <ul class="bullets">
+          <li data-i18n="exp.poseidon.risk.1">Developed an antithetic Monte Carlo pricing engine (Python/QuantLib) for path‑dependent nonlinear derivatives; integrated SVI/SABR‑calibrated vol surfaces and bootstrapped OIS curves, producing 200+ daily valuations and Greeks.</li>
+          <li data-i18n="exp.poseidon.risk.2">Designed and implemented an internal risk engine integrating CVaR, GARCH volatility forecasting, copula dependency modeling, Bayesian shrinkage, and PCA factor decomposition for regime‑aware risk control.</li>
+          <li data-i18n="exp.poseidon.risk.3">Applied Black‑Litterman for signal stabilization and Fisher information‑weighted covariance estimation to reduce fragility under shifting market regimes.</li>
+          <li data-i18n="exp.poseidon.risk.4">Automated multi‑asset trade lifecycle via Python/Flask (quoting → ordering → booking), streamlining workflows across front/middle/back office and improving operational accuracy with OMS/PMS tools (Enfusion/Derivitec/TSI/BBG).</li>
+          <li data-i18n="exp.poseidon.risk.5">Contributed to monthly Bloomberg ECFC & FXFC forecasts using in‑house regression models on macro indicators.</li>
+        </ul>
+
+        <h4 class="role-section" data-i18n="exp.poseidon.client.title">Client Engagement & Communication</h4>
+        <ul class="bullets">
+          <li data-i18n="exp.poseidon.client.1">Prepared market wraps and investor letters, translating macro regimes into actionable portfolio positioning and trade ideas.</li>
+          <li data-i18n="exp.poseidon.client.2">Designed strategic/tactical asset allocation frameworks, led monthly portfolio reviews and proactive rebalancing to maintain alignment with client objectives.</li>
+          <li data-i18n="exp.poseidon.client.3">Mentored 9 intern analysts over 4 years, delivering structured “101” training sessions on product mechanics, market microstructure, and risk.</li>
         </ul>
       </div>
 
       <div class="role">
         <div class="role-header">
-          <h3><span data-i18n="exp.gen.title">GenHarmony Capital Group — Private Equity Summer Intern (TMT)</span></h3>
-          <span><span data-i18n="exp.gen.time">Shanghai · May 2021 – Aug 2021</span></span>
+          <h3 data-i18n="exp.trident.title">Trident Partners Group SPC — Financial Analyst (Cayman Open‑Ended Digital Asset Mutual Fund)</h3>
+          <span data-i18n="exp.trident.time">Hong Kong | Feb 2022 – Jan 2024</span>
+        </div>
+        <p class="lead" data-i18n="exp.trident.lead">Operational + research role supporting a Cayman‑registered digital asset mutual fund, including product launch, documentation, and index tracking automation.</p>
+        <ul class="bullets">
+          <li data-i18n="exp.trident.b1">Designed the fund logo and website, and coordinated day‑to‑day operations with fund administrator, auditor, compliance, custodians, exchanges, and counterparties.</li>
+          <li data-i18n="exp.trident.b2">Supported the launch of index tracking fund TCDA, preparing institutional materials including Factsheet, PPM, IMA, DDQ, and pitchbooks for Accredited Investors.</li>
+          <li data-i18n="exp.trident.b3">Built automation scripts to retrieve live crypto prices via CoinMarket API, improving index operations efficiency by ~90%, including index weight adjustment, stablecoin removal rules, index price calculation, and backtesting workflow.</li>
+          <li data-i18n="exp.trident.b4">Initiated internal seminars and self‑directed research on Solidity, smart contracts, ECDSA, multi‑signature wallets, Merkle trees, token standards, and ERC‑20 / ERC‑721.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <h3 data-i18n="exp.gen.title">GenHarmony Capital Group (US$6B Private Equity Firm) — Private Equity Summer Analyst (TMT)</h3>
+          <span data-i18n="exp.gen.time">Shanghai, China | May 2021 – Aug 2021</span>
+        </div>
+        <p class="lead" data-i18n="exp.gen.lead">TMT‑focused buy‑side internship involving deal execution, diligence, and IC material preparation.</p>
+        <ul class="bullets">
+          <li data-i18n="exp.gen.b1">Led private placement workstream for BOE Technology (000725.SZ); participated in private placement of SF Express (002352.SZ) and pre‑IPO of Shenzhen Horn Audio; conducted diligence on NAURA Tech (002371.SZ).</li>
+          <li data-i18n="exp.gen.b2">Conducted expert interviews with staff/executives/underwriters/industry experts; collected historical market data and analyzed business + financial performance.</li>
+          <li data-i18n="exp.gen.b3">Built 3‑scenario revenue forecasts and summarized investment highlights/risks into a 200‑page IC package.</li>
+          <li data-i18n="exp.gen.b4">Addressed LP concerns and supported capital raising, ultimately raising $116M for the BOE deal.</li>
+          <li data-i18n="exp.gen.b5">Offered the lowest dealing price at ¥5.57 among 58 competing funds, achieving 25%+ paper profit.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <h3 data-i18n="exp.allign.title">ALLIGN Marketing — FP&A Summer Analyst</h3>
+          <span data-i18n="exp.allign.time">Detroit, MI | Mar 2021 – Aug 2021</span>
+        </div>
+        <p class="lead" data-i18n="exp.allign.lead">Finance operations + forecasting role supporting small‑business clients.</p>
+        <ul class="bullets">
+          <li data-i18n="exp.allign.b1">Conducted data input audits on clients’ QuickBooks accounts, reconciled entries, and delivered client‑facing findings.</li>
+          <li data-i18n="exp.allign.b2">Built forecasting models combining moving average and linear regression for revenue and expenses.</li>
+          <li data-i18n="exp.allign.b3">Performed ROI analysis across expense categories and developed hands‑on What‑if scenario models for business planning.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <h3 data-i18n="exp.mb.title">Maize & Blue Endowment Fund (University of Michigan) — Quantitative Researcher</h3>
+          <span data-i18n="exp.mb.time">Ann Arbor, MI | Sep 2021 – May 2022</span>
+        </div>
+        <p class="lead" data-i18n="exp.mb.lead">Quant research role in a premier student‑managed investment fund.</p>
+        <ul class="bullets">
+          <li data-i18n="exp.mb.b1">Managed and rebalanced value‑weighted portfolios using ML models including Lasso Penalized Regression, Random Forest, Gradient Boosting Regression, and Neural Networks with tuned hyperparameters.</li>
+          <li data-i18n="exp.mb.b2">Tracked alpha/beta, out‑of‑sample R², geometric average return, and Sharpe ratio to recommend 20 out of 300 stocks.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <h3 data-i18n="exp.jpm.title">J.P. Morgan Markets Virtual Program (Forage) — Sales & Trading</h3>
+          <span data-i18n="exp.jpm.time">New York | Jul 2022 – Aug 2022</span>
         </div>
         <ul class="bullets">
-          <li><span data-i18n="exp.gen.b1">Led private placement for BOE Technology; contributed to SF Express and Shenzhen Horn Audio deals.</span></li>
-          <li><span data-i18n="exp.gen.b2">Conducted due diligence, interviews, and scenario‑based revenue modeling.</span></li>
-          <li><span data-i18n="exp.gen.b3">Compiled 200‑page IC materials; helped raise $116M for BOE deal.</span></li>
+          <li data-i18n="exp.jpm.b1">Built a strategic client approach (client selection, service mapping, execution flow).</li>
+          <li data-i18n="exp.jpm.b2">Developed market‑relevant trade ideas and delivered a client pitch via mock phone call.</li>
+          <li data-i18n="exp.jpm.b3">Quoted equity futures considering liquidity and communicated pricing over the spread with sales in a simulated trading environment.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <h3 data-i18n="exp.citi.title">Citi APAC Investment Banking Virtual Experience (Forage) — Investment Banking</h3>
+          <span data-i18n="exp.citi.time">New York | Sep 2020 – Oct 2020</span>
+        </div>
+        <ul class="bullets">
+          <li data-i18n="exp.citi.b1">Prepared an IP‑based game operator company profile covering business model and key financials.</li>
+          <li data-i18n="exp.citi.b2">Selected 15 comparable companies and performed comps analysis.</li>
+          <li data-i18n="exp.citi.b3">Supported valuation work and summarized findings in a written update for senior bankers’ review.</li>
         </ul>
       </div>
     </section>

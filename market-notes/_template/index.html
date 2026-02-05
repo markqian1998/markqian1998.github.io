@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Notes — Mark Qian</title>
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">Mark Qian</div>
+    <nav>
+      <a href="../../index.html" data-i18n="nav.home">Home</a>
+      <a href="../../experience.html" data-i18n="nav.experience">Experience</a>
+      <a href="../../projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="../../education.html" data-i18n="nav.education">Education</a>
+      <a class="active" href="../index.html" data-i18n="nav.marketNotes">Market Notes</a>
+      <a href="../../contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="en">ENG</button>
+      <button class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="page note-page">
+    <header class="note-header">
+      <a class="back-link" href="../index.html">← Back to Market Notes</a>
+      <h1 id="note-title">Market Note</h1>
+      <div class="note-meta">
+        <span id="note-date"></span>
+        <div class="note-tags" id="note-tags"></div>
+      </div>
+    </header>
+
+    <article id="note-content" class="note-body" aria-live="polite"></article>
+
+    <nav class="note-nav" id="note-nav" aria-label="Market note navigation"></nav>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Mark Qian</span>
+    <a href="../../contact.html" data-i18n="footer.linkedin">LinkedIn</a>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script src="../../assets/marked.min.js"></script>
+  <script src="../../market-notes.js"></script>
+</body>
+</html>
