@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PORT = process.env.PORT || 5174;
+const PORT = Number(process.env.PORT) || 5177;
 
 const serveFile = async (res, filePath) => {
   try {
@@ -98,6 +98,6 @@ const server = http.createServer(async (req, res) => {
   return serveFile(res, filePath);
 });
 
-server.listen(PORT, () => {
-  console.log(`Dev server running at http://localhost:${PORT}`);
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`Dev server running at http://0.0.0.0:${PORT}`);
 });
