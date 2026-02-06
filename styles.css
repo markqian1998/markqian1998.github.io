@@ -420,7 +420,7 @@ h2 { margin-top: 42px; }
 .icon-link:hover { color: var(--text); }
 
 .stats {
-  margin-top: 24px;
+  margin-top: 8px;
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
@@ -690,6 +690,113 @@ h2 { margin-top: 42px; }
   margin-top: 16px;
 }
 
+.market-map {
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.world-map-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  min-height: 420px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(12, 16, 24, 0.5);
+  border: 1px solid #202a3b;
+}
+
+.world-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.48;
+  filter: grayscale(1) brightness(1.05) contrast(1.35);
+}
+
+.map-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+  background: rgba(10, 14, 20, 0.75);
+  border: 1px solid rgba(124, 255, 230, 0.12);
+  border-radius: 8px;
+  padding: 6px 8px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.map-label-title {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(234, 240, 255, 0.75);
+}
+
+.map-quotes {
+  display: grid;
+  gap: 6px;
+}
+
+.map-quote {
+  display: grid;
+  gap: 4px;
+}
+
+.map-quote-title {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: rgba(124, 255, 230, 0.85);
+}
+
+.map-quote-data {
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+  color: rgba(234, 240, 255, 0.9);
+}
+
+.map-quote-data .quote-price {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.map-quote-data .quote-change {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.map-quote-data.positive .quote-change { color: #6df2a6; }
+.map-quote-data.negative .quote-change { color: #ff7a7a; }
+
+.map-quote-widget {
+  min-height: 48px;
+}
+
+.map-quote-widget iframe {
+  width: 100% !important;
+  height: 48px !important;
+}
+
+.label-us { left: 18%; top: 24%; }
+.label-br { left: 24%; top: 58%; }
+.label-eu { left: 53%; top: 22%; }
+.label-uk { left: 42%; top: 18%; }
+.label-in { left: 64%; top: 44%; }
+.label-cn { left: 70%; top: 14%; }
+.label-jp { left: 88%; top: 12%; }
+.label-kr { left: 86%; top: 24%; }
+.label-hk { left: 72%; top: 30%; }
+.label-tw { left: 86%; top: 36%; }
+.label-au { left: 88%; top: 70%; }
+.label-commod { left: 0.5%; top: 46%; min-width: 200px; }
+
 .market-card {
   position: relative;
   background: var(--card);
@@ -830,7 +937,7 @@ h2 { margin-top: 42px; }
 }
 
 .identity-card {
-  margin-top: 6px;
+  margin-top: 24px;
   width: min(420px, 100%);
   height: 250px;
   perspective: 1800px;

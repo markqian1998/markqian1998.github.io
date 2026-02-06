@@ -46,67 +46,68 @@ const MARKET_SETS = {
   equities: [
     { label: 'S&P 500', proName: 'FOREXCOM:SPXUSD' },
     { label: 'Nasdaq 100', proName: 'FOREXCOM:NSXUSD' },
-    { label: 'MSCI World (URTH)', proName: 'NYSEARCA:URTH' },
+    { label: 'Dow Jones', proName: 'INDEX:DJI' },
+    { label: 'MSCI World', proName: 'NYSEARCA:URTH' },
     { label: 'Nikkei 225', proName: 'INDEX:NKY' },
-    { label: 'Hang Seng', proName: 'INDEX:HSI' },
-    { label: 'HSTech (proxy)', proName: 'HKEX:3033' },
-    { label: 'Shanghai Comp', proName: 'SSE:000001' },
-    { label: 'CSI 300 (proxy)', proName: 'SSE:000300' }
+    { label: 'Hang Seng', proName: 'INDEX:HSI' }
   ],
   rates_credit: [
-    { label: 'US 2Y', proName: 'FRED:DGS2' },
-    { label: 'US 5Y', proName: 'FRED:DGS5' },
-    { label: 'US 10Y', proName: 'FRED:DGS10' },
-    { label: 'US 30Y', proName: 'FRED:DGS30' },
-    { label: 'US Agg (AGG)', proName: 'NYSEARCA:AGG' },
-    { label: 'IG credit (LQD)', proName: 'NYSEARCA:LQD' },
-    { label: 'HY credit (HYG)', proName: 'NYSEARCA:HYG' }
+    { label: 'UST 2Y', proName: 'FRED:DGS2' },
+    { label: 'UST 10Y', proName: 'FRED:DGS10' },
+    { label: 'IG Credit (LQD)', proName: 'NYSEARCA:LQD' },
+    { label: 'HY Credit (HYG)', proName: 'NYSEARCA:HYG' },
+    { label: 'UST 2s10s', proName: 'FRED:T10Y2Y' }
   ],
   fx_dollar: [
+    { label: 'DXY (UUP)', proName: 'NYSEARCA:UUP' },
     { label: 'USDJPY', proName: 'OANDA:USDJPY' },
-    { label: 'USDCHF', proName: 'OANDA:USDCHF' },
-    { label: 'USDCNH', proName: 'OANDA:USDCNH' },
-    { label: 'USDCNY', proName: 'OANDA:USDCNY' },
-    { label: 'USDHKD', proName: 'OANDA:USDHKD' },
     { label: 'EURUSD', proName: 'OANDA:EURUSD' },
-    { label: 'GBPUSD', proName: 'OANDA:GBPUSD' },
-    { label: 'AUDUSD', proName: 'OANDA:AUDUSD' }
+    { label: 'USDCNH', proName: 'FX:USDCNH' }
   ],
   commodities: [
-    { label: 'BTC', proName: 'COINBASE:BTCUSD' },
     { label: 'Gold', proName: 'OANDA:XAUUSD' },
-    { label: 'Silver', proName: 'OANDA:XAGUSD' },
-    { label: 'Copper (proxy)', proName: 'TVC:COPPER' },
-    { label: 'WTI (proxy)', proName: 'TVC:USOIL' },
-    { label: 'Brent (proxy)', proName: 'TVC:UKOIL' },
-    { label: 'Nat Gas (proxy)', proName: 'TVC:NGAS' }
+    { label: 'WTI', proName: 'CFI:WTI' },
+    { label: 'Copper', proName: 'TVC:COPPER' },
+    { label: 'Bitcoin', proName: 'COINBASE:BTCUSD' },
+    { label: 'Ethereum', proName: 'COINBASE:ETHUSD' }
   ]
 };
 
-const buildSymbols = (set) => set.map((item) => [item.label, item.proName]);
+const buildSymbols = (set) => set.map((item) => ({ name: item.proName, displayName: item.label }));
 
 const marketConfigs = {
   equities: {
     containerId: 'market-equities',
+    title: 'Equities',
     symbols: buildSymbols(MARKET_SETS.equities)
   },
   rates: {
     containerId: 'market-rates',
+    title: 'Rates & Credit',
     symbols: buildSymbols(MARKET_SETS.rates_credit)
   },
   fx: {
     containerId: 'market-fx',
+    title: 'FX & Dollar',
     symbols: buildSymbols(MARKET_SETS.fx_dollar)
   },
   commodities: {
     containerId: 'market-commodities',
+    title: 'Commodities & Crypto',
     symbols: buildSymbols(MARKET_SETS.commodities)
   }
 };
 
+Object.entries(marketConfigs).forEach(([key, cfg]) => {
+  const host = document.getElementById(cfg.containerId);
+  if (host) host.dataset.widgetKey = key;
+});
+
 const loadMarketWidget = (cfg) => {
   const container = document.getElementById(cfg.containerId);
   if (!container) return;
+
+  container.innerHTML = '';
 
   const widget = document.createElement('div');
   widget.className = 'tradingview-widget-container';
@@ -116,17 +117,22 @@ const loadMarketWidget = (cfg) => {
 
   const script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js';
+  script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js';
   script.async = true;
   script.innerHTML = JSON.stringify({
     colorTheme: 'dark',
-    dateRange: '1D',
-    showChart: true,
     locale: 'en',
     width: '100%',
     height: 360,
     isTransparent: true,
-    symbols: cfg.symbols
+    showSymbolLogo: false,
+    symbolsGroups: [
+      {
+        name: cfg.title,
+        originalName: cfg.title,
+        symbols: cfg.symbols
+      }
+    ]
   });
 
   widget.appendChild(script);
@@ -134,6 +140,66 @@ const loadMarketWidget = (cfg) => {
 };
 
 Object.values(marketConfigs).forEach(loadMarketWidget);
+
+const stooqCache = new Map();
+let stooqBackoffMs = 0;
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const fetchStooqQuotes = async (symbols, attempt = 0) => {
+  const url = `/api/stooq?symbols=${encodeURIComponent(symbols.join(','))}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Stooq fetch failed: ${res.status}`);
+  const data = await res.json();
+  return data.quotes || [];
+};
+
+const renderStooqQuotes = async () => {
+  const nodes = Array.from(document.querySelectorAll('.map-quote-data'));
+  if (!nodes.length) return;
+
+  const symbols = nodes.map((node) => node.dataset.stooqSymbol).filter(Boolean);
+  if (!symbols.length) return;
+
+  if (stooqBackoffMs) await sleep(stooqBackoffMs);
+
+  try {
+    const quotes = await fetchStooqQuotes(symbols);
+    stooqBackoffMs = 0;
+    const quoteMap = new Map(quotes.map((q) => [q.symbol, q]));
+
+    nodes.forEach((node) => {
+      const symbol = node.dataset.stooqSymbol;
+      const q = quoteMap.get(symbol);
+      if (q && q.price != null) {
+        stooqCache.set(symbol, q);
+      }
+
+      const cached = stooqCache.get(symbol);
+      if (!cached || cached.price == null) {
+        return; // keep previous DOM as-is
+      }
+
+      const price = cached.price;
+      const change = cached.change ?? 0;
+      const changePct = cached.changePct ?? 0;
+
+      node.classList.remove('positive', 'negative');
+      if (change > 0) node.classList.add('positive');
+      if (change < 0) node.classList.add('negative');
+
+      node.innerHTML = `
+        <div class="quote-price">${price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</div>
+        <div class="quote-change">${change >= 0 ? '+' : ''}${change.toFixed(2)} (${changePct >= 0 ? '+' : ''}${changePct.toFixed(2)}%)</div>
+      `;
+    });
+  } catch (err) {
+    stooqBackoffMs = Math.max(stooqBackoffMs ? Math.floor(stooqBackoffMs / 2) : 20000, 1000);
+  }
+};
+
+renderStooqQuotes();
+setInterval(renderStooqQuotes, 5000);
 
 // Subtle flicker/glow pulse on cards to mimic terminal updates
 setInterval(() => {
