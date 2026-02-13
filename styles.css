@@ -570,6 +570,12 @@ h2 { margin-top: 42px; }
 
 .section { margin-top: 42px; }
 
+.section.markets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .bullets { padding-left: 18px; color: var(--muted); line-height: 1.6; }
 .bullets li { margin-bottom: 10px; }
 
