@@ -366,16 +366,6 @@ h2 { margin-top: 42px; }
   margin-top: 8px;
 }
 
-.home-experience-spacer {
-  height: 12px;
-}
-
-@media (max-width: 720px) {
-  .home-experience-spacer {
-    height: 18px;
-  }
-}
-
 
 .btn {
   display: inline-flex;
@@ -464,7 +454,7 @@ h2 { margin-top: 42px; }
 .icon-link:hover { color: var(--text); }
 
 .stats {
-  margin-top: 8px;
+  margin-top: 30px;
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
