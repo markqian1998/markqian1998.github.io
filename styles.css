@@ -999,12 +999,12 @@ h2 { margin-top: 42px; }
 }
 
 .identity-card {
-  margin-top: 24px;
+  margin: 24px auto 0;
   width: min(420px, 100%);
   height: 250px;
   perspective: 1800px;
-  justify-self: end;
-  transform: translateX(36px);
+  justify-self: center;
+  transform: none;
   animation: card-float 7s ease-in-out infinite;
   filter: drop-shadow(0 36px 70px rgba(0, 0, 0, 0.65)) drop-shadow(0 12px 28px rgba(0, 0, 0, 0.5));
 }
