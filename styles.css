@@ -1544,11 +1544,15 @@ simple-list {
   }
 
   .page {
-    padding: 28px 6vw 56px;
+    padding: 26px 6vw 52px;
+  }
+
+  .hero {
+    margin-bottom: 36px;
   }
 
   .profile {
-    gap: 16px;
+    gap: 18px;
     text-align: center;
   }
 
@@ -1558,22 +1562,28 @@ simple-list {
 
   .profile-media .links {
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
   }
 
   .avatar {
-    width: 120px;
-    height: 150px;
+    width: 128px;
+    height: 160px;
   }
 
   .hero h1 {
-    font-size: 22px;
+    font-size: 28px;
     line-height: 1.2;
+    letter-spacing: 0.02em;
   }
 
   .hero .lead {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .hero .meta {
@@ -1583,10 +1593,19 @@ simple-list {
 
   .meta-item {
     text-align: left;
-    padding: 12px;
+    padding: 14px;
     border-radius: 12px;
     background: rgba(12, 16, 24, 0.55);
     border: 1px solid #1f2533;
+  }
+
+  .meta-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  .meta-value {
+    font-size: 14px;
   }
 
   .cta-row {
@@ -1598,6 +1617,8 @@ simple-list {
   .cta-row .btn {
     width: 100%;
     text-align: center;
+    padding: 12px 14px;
+    font-size: 13px;
   }
 
   .hero-cred-row {
@@ -1605,7 +1626,7 @@ simple-list {
   }
 
   .identity-card {
-    height: 200px;
+    display: none;
   }
 }
 
