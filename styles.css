@@ -17,6 +17,12 @@ body {
   color: var(--text);
   background: radial-gradient(circle at top, #111827 0%, #0a0d12 35%, #07090d 100%);
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .site-header {
@@ -105,6 +111,7 @@ nav a.active, nav a:hover {
   border-bottom: 1px solid #1f2533;
   padding: 8px 8vw;
   background: rgba(12, 16, 24, 0.6);
+  overflow: hidden;
 }
 
 .page {
