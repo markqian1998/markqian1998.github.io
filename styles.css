@@ -1605,10 +1605,6 @@ simple-list {
     font-size: 16px;
     line-height: 1.7;
     max-width: 100%;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 
   .hero .meta {
@@ -1652,6 +1648,14 @@ simple-list {
 
   .identity-card {
     display: none;
+  }
+
+  .badge-pill h3 {
+    white-space: normal;
+  }
+
+  .badge-row {
+    grid-template-columns: 1fr;
   }
 }
 
