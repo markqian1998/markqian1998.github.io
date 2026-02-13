@@ -1608,7 +1608,8 @@ simple-list {
     margin-top: 6px;
   }
 
-  .site-header:focus-within nav {
+  .site-header:focus-within nav,
+  body.nav-open nav {
     display: flex;
   }
 
@@ -1695,8 +1696,8 @@ simple-list {
   .cta-row .btn {
     width: 100%;
     text-align: center;
-    padding: 12px 14px;
-    font-size: 13px;
+    padding: 13px 14px;
+    font-size: 15px;
   }
 
   .hero-cred-row {
