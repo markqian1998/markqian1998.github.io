@@ -947,6 +947,10 @@ h2 { margin-top: 42px; }
   .edu-section .cert-grid .badge-pill {
     width: 100%;
   }
+
+  .edu-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .badge-pill {
