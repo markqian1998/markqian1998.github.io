@@ -570,7 +570,7 @@ h2 { margin-top: 42px; }
 
 .section { margin-top: 42px; }
 
-.section.markets {
+.section.identity-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1591,10 +1591,6 @@ simple-list {
     font-size: 11px;
   }
 
-  .market-header,
-  .market-map {
-    display: none;
-  }
 
   .brand {
     font-size: 18px;
