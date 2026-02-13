@@ -366,6 +366,16 @@ h2 { margin-top: 42px; }
   margin-top: 8px;
 }
 
+.home-experience-spacer {
+  height: 12px;
+}
+
+@media (max-width: 720px) {
+  .home-experience-spacer {
+    height: 18px;
+  }
+}
+
 
 .btn {
   display: inline-flex;
@@ -926,6 +936,17 @@ h2 { margin-top: 42px; }
 
 .edu-section .cert-grid {
   flex-wrap: nowrap;
+}
+
+@media (max-width: 720px) {
+  .edu-section .cert-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .edu-section .cert-grid .badge-pill {
+    width: 100%;
+  }
 }
 
 .badge-pill {
