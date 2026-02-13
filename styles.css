@@ -413,6 +413,10 @@ h2 { margin-top: 42px; }
   flex: 0 0 auto;
 }
 
+.mini-section + .mini-section {
+  margin-top: 18px;
+}
+
 .mini-section h3 {
   margin: 0 0 10px 0;
   font-size: 15px;
