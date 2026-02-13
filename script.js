@@ -1,18 +1,3 @@
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelectorAll('header nav a');
-if (navToggle) {
-  navToggle.addEventListener('click', () => {
-    const open = document.body.classList.toggle('nav-open');
-    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-}
-navLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    document.body.classList.remove('nav-open');
-    if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
-  });
-});
-
 // === Animated counters ===
 const counters = document.querySelectorAll('[data-count]');
 

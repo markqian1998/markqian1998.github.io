@@ -45,19 +45,6 @@ img {
   z-index: 10;
 }
 
-.nav-toggle {
-  display: none;
-  background: transparent;
-  color: var(--text);
-  border: 1px solid #2a3648;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
 .lang-toggle {
   display: flex;
   gap: 8px;
@@ -1551,8 +1538,8 @@ simple-list {
 
 @media (max-width: 480px) {
   .site-header {
-    grid-template-columns: 1fr auto;
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .page,
@@ -1599,30 +1586,22 @@ simple-list {
 
   .brand {
     font-size: 18px;
-  }
-
-  .nav-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
   }
 
   nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
-    margin-top: 6px;
-  }
-
-  .site-header:focus-within nav,
-  body.nav-open nav {
-    display: flex;
   }
 
   nav a {
-    font-size: 12px;
-    padding: 6px 0;
+    font-size: 11px;
+    padding: 8px 6px;
+    text-align: center;
+    border: 1px solid #1f2533;
+    border-radius: 8px;
+    background: rgba(12, 16, 24, 0.6);
   }
 
   .ticker {
