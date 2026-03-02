@@ -13,6 +13,34 @@
       "date": "2026-02-05",
       "excerpt": "Momentum unwind looks like a positioning clean-up, not a macro break.",
       "tags": ["Macro", "Positioning", "Vol", "Cross-Asset"]
+    },
+    {
+      "slug": "2026-01-02-2026-global-economic-outlook-china-japan-quiet-end-of-old-models",
+      "title": "2026 Global Economic Outlook (II) – China & Japan – The Quiet End of Old Models",
+      "date": "2026-01-02",
+      "excerpt": "China growth stable but demand weak; RMB managed appreciation; Japan shifts to a new policy regime with fiscal/security-driven macro.",
+      "tags": ["Macro", "FX", "China", "Japan", "Policy"]
+    },
+    {
+      "slug": "2025-12-22-2026-global-economic-outlook-us-alpha-matters-more",
+      "title": "2026 Global Economic Outlook (I) – US – Alpha Matters More",
+      "date": "2025-12-22",
+      "excerpt": "Liquidity plumbing improves while labor softens; prefer curve steepeners; equities constructive but more selective.",
+      "tags": ["Macro", "Rates", "Liquidity", "Equities", "US"]
+    },
+    {
+      "slug": "2025-06-26-2025-h2-global-economic-outlook-japan-europe",
+      "title": "2025 H2 Global Economic Outlook (II) – Japan and Europe",
+      "date": "2025-06-26",
+      "excerpt": "Japan inflation sticky but BOJ likely cautious; JGB volatility and USDJPY range; Europe easing amid fiscal divergence.",
+      "tags": ["Macro", "Rates", "FX", "Japan", "Europe"]
+    },
+    {
+      "slug": "2025-06-20-2025-h2-global-economic-outlook-us-china",
+      "title": "2025 H2 Global Economic Outlook (I) - US and China",
+      "date": "2025-06-20",
+      "excerpt": "H2 outlook: US resilience vs tariff drag; Fed cautious; curve steepener; USD softer; China growth constrained by trade and deflation.",
+      "tags": ["Macro", "Rates", "FX", "Equities", "US", "China"]
     }
   ]
 }
