@@ -1954,12 +1954,13 @@ simple-list {
 }
 
 .note-figure {
-  margin: 28px auto;
-  text-align: center;
+  margin: 28px 0;
+  text-align: left;
 }
 
 .note-figure img {
-  max-width: min(100%, 700px);
+  width: 100%;
+  max-width: 100%;
   border-radius: 10px;
   border: 1px solid #243044;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
